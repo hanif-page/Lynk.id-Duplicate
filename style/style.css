@@ -5,47 +5,97 @@
     margin: 0;
     box-sizing: border-box;
 }
-
 body {
     font-family: 'Quicksand', sans-serif;
     font-weight: bold;
+    background: #f4f6fc;
 }
-
 a {
     text-decoration: none;
     color: inherit;
 }
+li {list-style: none}
 
-li {
-    list-style: none;
-}
-
-/* the phone */
-.phone-mockup {
+/*                          The Phone Style                         */
+.iphone-x {
+    position: relative;
+    margin: 50px auto;
     width: 360px;
     height: 780px;
-    box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
-    margin: 50px auto;
     border-radius: 40px;
+    box-shadow: 0px 0px 0px 11px #1f1f1f, 0px 0px 0px 13px #191919, 0px 0px 0px 20px #111;
+
+    /* Content Inside the Phone */
     background-image: linear-gradient(to bottom right, rgb(43, 0, 255), rgb(149, 0, 255));
-    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: column;
 }
-
-/* front camera */
-.camera {
-    width: 20px;
-    height: 20px;
-    border-radius: 100%;
-    background-color: #333;
+.iphone-x:before, .iphone-x:after {
+    content: "";
     position: absolute;
-    top: 30px;
-    left: 30px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+.iphone-x:after {
+    bottom: 7px;
+    width: 140px;
+    height: 4px;
+    background-color: #f2f2f2;
+    border-radius: 10px;
+}
+.iphone-x:before {
+    top: 0px;
+    width: 56%;
+    height: 30px;
+    background-color: #1f1f1f;
+    border-radius: 0px 0px 40px 40px;
+    }
+.iphone-x i.speaker,
+.iphone-x b.camera {
+    position: absolute;
+    display: block;
+    color: transparent;
+}
+.iphone-x i.speaker {
+    top: 0px;
+    left: 50%;
+    transform: translate(-50%, 6px);
+    height: 8px;
+    width: 15%;
+    background-color: #101010;
+    border-radius: 8px;
+    box-shadow: inset 0px -3px 3px 0px rgba(255, 255, 255, 0.2);
+}
+.iphone-x b.camera {
+    left: 10%;
+    top: 0px;
+    transform: translate(180px, 4px);
+    width: 12px;
+    height: 12px;
+    background-color: #101010;
+    border-radius: 12px;
+    box-shadow: inset 0px -3px 2px 0px rgba(255, 255, 255, 0.2);
+}
+.iphone-x b.camera:after {
+    content: "";
+    position: absolute;
+    background-color: #2d4d76;
+    width: 6px;
+    height: 6px;
+    top: 2px;
+    left: 2px;
+    top: 3px;
+    left: 3px;
+    display: block;
+    border-radius: 4px;
+    box-shadow: inset 0px -2px 2px rgba(0, 0, 0, 0.5);
+}
+/*                          The Phone Style                         */
 
+
+/* Content Style */
 .profile .profile-pict {
     width: 120px;
     height: 120px;
@@ -55,27 +105,23 @@ li {
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 50px auto;
+    margin: 80px auto 30px auto;
     font-size: 20px;
 }
-
 ul.connect {
     display: flex;
     justify-content: space-between;
 }
-
 .fab {
     font-size: 36px;
     padding: 0px 16px;
     color: #fff;
 }
-
 ul.button-bar {
     display: flex;
     flex-direction: column;
     min-height: 300px;
 }
-
 ul.button-bar li {
     background: rgb(255, 213, 0);
     color: #666;
@@ -83,9 +129,8 @@ ul.button-bar li {
     margin: 10px 0;
     padding: 16px 90px;
 }
-
 .made-with {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
     font-weight: 300;
 }
 .made-with a .lynk {
